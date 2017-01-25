@@ -15,6 +15,14 @@ return [
         "admin" => [
             "class" => 'mdm\admin\Module',
         ],
+        'gii'   => [
+            'class' => 'yii\gii\Module',
+            'allowedIPs' => ['127.0.0.1', '::1', '192.168.*.*'] // 按需调整这里
+        ],
+        'debug'   => [
+            'class' => 'yii\debug\Module',
+            'allowedIPs' => ['127.0.0.1', '::1', '192.168.*.*'] // 按需调整这里
+        ]
     ],
     "aliases" => [
         "@mdm/admin" => "@vendor/mdmsoft/yii2-admin",
