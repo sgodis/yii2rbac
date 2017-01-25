@@ -57,6 +57,18 @@ return [
                     'class' => 'yii\log\FileTarget',
                     'levels' => ['error', 'warning'],
                 ],
+                [
+                    'class' => 'yii\log\DbTarget',
+                    'levels' => ['error', 'warning'],
+                    'categories' => [
+                        'yii\db\*',
+                        'yii\web\HttpException:*',
+//                        'yii\base\ErrorException:*',
+                    ],
+                    'except' => [
+                        'yii\web\HttpException:404',
+                    ],
+                ],
             ],
         ],
         'errorHandler' => [
